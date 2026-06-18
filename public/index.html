@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant POS</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="app">
+        <header>
+            <h1>🍽️ Restaurant POS</h1>
+            <div class="header-controls">
+                <div id="statusBadge" class="online">🟢 Online</div>
+                <button id="syncBtn">🔄 Sync Offline</button>
+            </div>
+        </header>
+        <div class="main">
+            <div class="menu-section">
+                <h2>📋 Menu</h2>
+                <div id="menuContainer"></div>
+            </div>
+            <div class="cart-section">
+                <h2>🛒 Current Order</h2>
+                <div id="cart"><p class="empty">🛒 No items</p></div>
+                <div id="totalDisplay"><strong>Total: $0.00</strong></div>
+                <div id="aiUpsell" style="display:none;">
+                    <p id="upsellMessage">💡 Recommendation:</p>
+                    <button id="addUpsellBtn">➕ Add to Cart</button>
+                </div>
+                <div class="payment-section">
+                    <h3>💳 Payment</h3>
+                    <select id="paymentMethod">
+                        <option value="Cash">💵 Cash</option>
+                        <option value="Credit Card">💳 Credit Card</option>
+                        <option value="M-Pesa">📱 M-Pesa</option>
+                    </select>
+                    <button id="checkoutBtn">✅ Checkout</button>
+                </div>
+                <div id="qrContainer" style="display:none;">
+                    <h3>📱 QR Receipt</h3>
+                    <img id="qrImage" src="" alt="QR" />
+                    <p>Scan to view receipt</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+.app { max-width: 1400px; margin: 0 auto; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }
+header { background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); color: white; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+header h1 { font-size: 2rem; }
+.header-controls { display: flex; align-items: center; gap: 15px; }
+#statusBadge { padding: 8px 20px; border-radius: 30px; font-weight: 700; font-size: 0.9rem; }
+.online { background: #27ae60; color: white; }
+.offline { background: #e74c3c; color: white; animation: pulse 1.5s infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.6; } }
+#syncBtn { background: rgba(255,255,255,0.2); color: white; border: 2px solid rgba(255,255,255,0.3); padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 600; }
+.main { display: flex; gap: 30px; padding: 30px; flex-wrap: wrap; }
+.menu-section { flex: 2; min-width: 300px; }
+.menu-section h2 { color: #2c3e50; font-size: 1.8rem; margin-bottom: 20px; border-bottom: 3px solid #3498db; padding-bottom: 10px; display: inline-block; }
+#menuContainer { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; }
+.menu-item { background: white; border: 2px solid #e8ecf1; border-radius: 16px; padding: 20px 15px; text-align: center; cursor: pointer; transition: all 0.3s; }
+.menu-item:hover { transform: translateY(-5px); border-color: #667eea; box-shadow: 0 10px 30px rgba(102,126,234,0.3); }
+.menu-item h4 { color: #2c3e50; margin-bottom: 8px; }
+.menu-item .price { color: #27ae60; font-size: 1.3rem; font-weight: 700; }
+.menu-item .stock { color: #7f8c8d; font-size: 0.8rem; display: block; margin-top: 5px; }
+.cart-section { flex: 1.2; min-width: 300px; background: #f8f9fa; border-radius: 16px; padding: 25px; border: 2px solid #e8ecf1; }
+.cart-section h2 { color: #2c3e50; font-size: 1.6rem; margin-bottom: 20px; border-bottom: 3px solid #e67e22; padding-bottom: 10px; display: inline-block; }
+#cart { min-height: 100px; max-height: 300px; overflow-y: auto; }
+.empty { color: #bdc3c7; text-align: center; padding: 30px 0; }
+.cart-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #ecf0f1; }
+.cart-item button { background: #e74c3c; color: white; border: none; border-radius: 50%; width: 25px; height: 25px; cursor: pointer; }
+#totalDisplay { font-size: 1.8rem; text-align: right; padding: 20px 0 10px 0; border-top: 3px double #e8ecf1; margin-top: 15px; }
+#totalDisplay strong { color: #e67e22; }
+#aiUpsell { background: #fef9e7; padding: 15px 20px; border-radius: 12px; margin: 15px 0; border-left: 4px solid #e67e22; }
+#addUpsellBtn { background: #e67e22; color: white; border: none; padding: 8px 20px; border-radius: 25px; cursor: pointer; font-weight: 600; }
+.payment-section { margin-top: 20px; padding-top: 20px; border-top: 2px solid #e8ecf1; }
+#paymentMethod { padding: 12px 15px; border-radius: 10px; border: 2px solid #dce1e8; width: 100%; font-size: 1rem; margin-bottom: 12px; }
+#checkoutBtn { background: #27ae60; color: white; font-weight: 700; border: none; padding: 14px; border-radius: 12px; cursor: pointer; width: 100%; font-size: 1.1rem; text-transform: uppercase; }
+#checkoutBtn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(39,174,96,0.4); }
+#checkoutBtn:disabled { background: #95a5a6; cursor: not-allowed; }
+#qrContainer { text-align: center; margin-top: 20px; padding: 20px; background: white; border-radius: 12px; border: 2px dashed #3498db; }
+#qrImage { width: 150px; height: 150px; margin: 10px auto; display: block; }
+@media (max-width: 768px) { header { flex-direction: column; text-align: center; } .main { padding: 15px; } .menu-section, .cart-section { min-width: 100%; } #menuContainer { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); } }
